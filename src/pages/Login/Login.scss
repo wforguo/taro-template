@@ -1,0 +1,94 @@
+.login-page {
+    width: 100%;
+
+    .login-inner {
+        width: 343px * 2;
+        button {
+            font-size: 34px;
+        }
+        //.at-button--disabled {
+        //    background: #ddd;
+        //    border: #ddd;
+        //    opacity: 1;
+        //}
+
+        .filed-input {
+            position: relative;
+            margin-top: 34px;
+            border-bottom: 1PX solid #E7E7E7;
+            input {
+                font-size: 28px;
+            }
+        }
+        .show-pwd {
+            top: 50%;
+            right: 5px;
+            transform: translate3d(0, -50%,0);
+        }
+        .reset-pwd {
+            padding: 15px;
+            font-size: 14px * 2;
+            color: #999999;
+            letter-spacing: 0;
+            text-align: center;
+            margin-top: 13px;
+            margin-bottom: 24px;
+        }
+        .agree-box {
+            margin-top: 48rpx;
+            font-size: 28px;
+            font-weight:300;
+            color: #000;
+            text-align: left;
+            checkbox-group {
+                display: flex;
+                align-items: center;
+                //justify-content: center;
+            }
+            .checkbox {
+                checkbox {
+                    transform: scale(0.8);
+                    border-radius:5rpx;
+                    border: 0;
+                    outline: none;
+                }
+                .wx-checkbox-input.wx-checkbox-input-checked::before{
+                    width: 100%;
+                    height: 100%;
+                    font-size:0rpx;
+                    color:transparent;
+                    background: rgba(255,255,255,1);
+                    border-radius:8rpx;
+                    transform:translate(-50%, -50%) scale(1.1);
+                    -webkit-transform:translate(-50%, -50%) scale(1.1);
+                    border: 1PX solid #E22222;
+                    outline: none;
+                }
+                .wx-checkbox-input.wx-checkbox-input-checked::after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 10rpx;
+                    height: 20rpx;
+                    margin-left: -9rpx;
+                    margin-top: -16rpx;
+                    border: solid #E22222;
+                    border-width: 0 10rpx 10rpx 0;
+                    transform: rotate(45deg);
+                    transform-origin: center;
+                    border-radius: 2rpx;
+                }
+            }
+            .read-tips {
+                display: inline-block;
+                line-height: 37rpx;
+                font-size:28rpx;
+                margin-left: 8rpx;
+                font-weight:400;
+                color: #6c9feb;
+                text-decoration: underline;
+            }
+        }
+    }
+}

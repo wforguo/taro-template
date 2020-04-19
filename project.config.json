@@ -1,7 +1,7 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "zc-business-wxapp",
-	"description": "业务通小程序",
+	"description": "卡车胎业务通",
 	"appid": "wxb1cff7e2de8753e5",
 	"setting": {
 		"urlCheck": false,

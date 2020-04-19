@@ -1,12 +1,11 @@
 import Taro, {Component} from '@tarojs/taro'
 import {Provider} from '@tarojs/redux'
-import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 
-import Index from './pages/Index/Index'
+import Index from './pages/Work/Work'
 
 import configStore from './store'
 
-import './app.less'
+import './app.scss'
 
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -21,7 +20,6 @@ class App extends Component {
 
     config = {
         pages: [
-            'pages/Index/Index',
             'pages/Login/Login',
             'pages/Mine/Mine',
             'pages/Work/Work',
@@ -35,11 +33,11 @@ class App extends Component {
         tabBar: {
             "list": [
                 {
-                    "pagePath": "pages/Index/Index",
-                    "text": "首页"
+                    "pagePath": "pages/Work/Work",
+                    "text": "工作台"
                 },
                 {
-                    "pagePath": "pages/Login/Login",
+                    "pagePath": "pages/Mine/Mine",
                     "text": "我的"
                 }
             ]

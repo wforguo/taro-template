@@ -1,34 +1,34 @@
 import Taro, {Component} from '@tarojs/taro'
-import {View, Button, Text} from '@tarojs/components'
-import {connect} from '@tarojs/redux'
+import {View, OpenData, Navigator, Text, Image } from '@tarojs/components'
+import {AtIcon} from "taro-ui";
+import './Mine.scss'
 
-import {add, minus, asyncAdd} from '../../store/actions/counter'
-
-import './Mine.less'
-
-
-@connect(
-    (
-        {
-            counter
-        }) => ({
-    counter
-}), {
-        add,
-        minus,
-        asyncAdd
-    })
 class Mine extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            navList: [
+                {
+
+                },
+                {
+
+                },
+                {
+
+                },
+                {
+
+                }
+           ]
+        };
+    }
 
     config = {
-        navigationBarTitleText: '首页'
+        navigationBarTitleText: '我的'
     }
 
-    componentWillReceiveProps(nextProps) {
-        console.log(this.props, nextProps)
-    }
-
-    componentWillUnmount() {
+    componentWillMount() {
     }
 
     componentDidShow() {
@@ -38,14 +38,28 @@ class Mine extends Component {
     }
 
     render() {
+        const { navList } = this.state;
         return (
-            <View className='index'>
-                <Button className='add_btn' onClick={this.props.add}>+</Button>
-                <Button className='dec_btn' onClick={this.props.minus}>-</Button>
-                <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-                <View><Text>{this.props.counter.num}</Text></View>
-                <View><Text>Hello, World</Text></View>
-                <Button>登录</Button>
+            <View className='page mine-page'>
+                <View className='mine-inner block-center'>
+                    <View className='user-info'>
+                        <View className='user-avatar'>
+                            <OpenData type='userAvatarUrl' />
+                        </View>
+                        <OpenData type='userNickName' className='user-name' />
+                        <View className='mobile'>17609491107</View>
+                        <View className='duty'>经销商业务员</View>
+                    </View>
+
+                    <View className='at-row at-row__align--center tool-btn change-pwd' hoverClass='btn-hover'>
+                        <AtIcon value='lock' size='26' color='#4B9CD8'></AtIcon>
+                        <Text className='tool-txt'>修改密码</Text>
+                    </View>
+                    <View className='at-row at-row__align--center tool-btn user' hoverClass='btn-hover'>
+                        <AtIcon value='list' size='26' color='#3DB689'></AtIcon>
+                        <Text className='tool-txt'>《用户、隐私 协议》</Text>
+                    </View>
+                </View>
             </View>
         )
     }
