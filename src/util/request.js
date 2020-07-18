@@ -2,7 +2,7 @@
  * @Description: request.js
  * @author: admin
  * @date: 2020/4/15
-*/
+ */
 
 import Taro from '@tarojs/taro'
 
@@ -27,7 +27,7 @@ const CODE_MSG = {
 };
 
 const request = {
-    handlerResolve: function(res, resolve, reject) {
+    handlerResolve: function (res, resolve, reject) {
         // 请求成功的处理
         console.log(res);
         if (res.statusCode === 200) {
@@ -37,7 +37,7 @@ const request = {
                 reject(res.data);
             }
         } else {
-            const errMsg = CODE_MSG[res.statusCode] || res.errMsg
+            const errMsg = CODE_MSG[res.statusCode] || res.errMsg;
             Taro.showToast({
                 duration: 3000,
                 icon: 'none',
@@ -49,13 +49,13 @@ const request = {
         // 错误处理，微信小程序只有网络错误会进入到小程序
         reject(err);
         if (ifHandleError) {
-            setTimeout(function() {
+            setTimeout(function () {
                 Taro.showModal({
                     title: '提示',
                     content: '您的网络似乎不太好，请稍后再试!',
                     showCancel: false
                 });
-            },300);
+            }, 300);
         }
     },
     handleComplete: () => {
@@ -73,7 +73,7 @@ const request = {
                     this.handlerResolve(res, resolve, reject);
                 },
                 fail: (err) => {
-                    let { ifHandleError } = params;
+                    let {ifHandleError} = params;
                     this.handlerReject(err, reject, ifHandleError);
                 },
                 complete: () => {
@@ -82,6 +82,6 @@ const request = {
             })
         });
     }
-}
+};
 
 export default request

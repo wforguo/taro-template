@@ -1,32 +1,12 @@
 import Taro, {Component} from '@tarojs/taro'
-import {View, OpenData, Navigator, Text, Image } from '@tarojs/components'
+import {OpenData, Text, View} from '@tarojs/components'
 import {AtIcon} from "taro-ui";
 import './Mine.scss'
 
 class Mine extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            navList: [
-                {
-
-                },
-                {
-
-                },
-                {
-
-                },
-                {
-
-                }
-           ]
-        };
-    }
-
     config = {
         navigationBarTitleText: '我的'
-    }
+    };
 
     componentWillMount() {
     }
@@ -38,7 +18,6 @@ class Mine extends Component {
     }
 
     render() {
-        const { navList } = this.state;
         return (
             <View className='page mine-page'>
                 <View className='mine-inner block-center'>

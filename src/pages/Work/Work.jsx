@@ -1,35 +1,23 @@
 import Taro, {Component} from '@tarojs/taro'
-import {View, Navigator, Text, Image } from '@tarojs/components'
-
-import HeaderLogo from "../../components/HeaderLogo";
+import {Image, Navigator, Text, View} from '@tarojs/components'
+import Skeleton from 'taro-skeleton'
 import './Work.scss'
 
 class Work extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            navList: [
-                {
 
-                },
-                {
-
-                },
-                {
-
-                },
-                {
-
-                }
-            ]
-        };
-    }
-
+    state = {
+        loading: true
+    };
     config = {
         navigationBarTitleText: '卡车胎业务通'
-    }
+    };
 
     componentWillMount() {
+        setTimeout(() => {
+            this.setState({
+                loading: false
+            })
+        }, 1200);
     }
 
     componentDidShow() {
@@ -39,48 +27,77 @@ class Work extends Component {
     }
 
     render() {
-        const { navList } = this.state;
+        const loading = this.state.loading;
         return (
             <View className='page work-page'>
                 <View className='work-inner block-center'>
-                    <HeaderLogo />
-                    <View className='nav-list'>
-                        <View className='at-row at-row__justify--center'>
-                            <View className='nav-item at-col at-col-12 nav-manage'>
-                                <Navigator url='/pages/Login/Login' openType='navigate' className='navigator' hoverClass={'nav-hover'}>
-                                    <Text className='nav-txt'>门店管理</Text>
-                                    <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
-                                </Navigator>
-                            </View>
+                    <Skeleton
+                      row={1}
+                      rowHeight={160}
+                      loading={loading}
+                      animate
+                      skeleton-custom-class='skeleton-style'
+                    >
+                        <View className='nav-item nav-manage'>
+                            <Navigator url='/pages/Login/Login' openType='navigate' className='navigator'
+                              hoverClass='nav-hover'
+                            >
+                                <Text className='nav-txt'>门店管理</Text>
+                                <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
+                            </Navigator>
                         </View>
+                    </Skeleton>
 
-                        <View className='at-row at-row__justify--center'>
-                            <View className='nav-item at-col at-col-12 nav-create'>
-                                <Navigator url='/pages/Login/Login' openType='navigate' className='navigator' hoverClass={'nav-hover'}>
-                                    <Text className='nav-txt'>新店申请</Text>
-                                    <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
-                                </Navigator>
-                            </View>
+                    <Skeleton
+                      row={1}
+                      rowHeight={160}
+                      loading={loading}
+                      animate
+                      skeleton-custom-class='skeleton-style'
+                    >
+                        <View className='nav-item nav-manage'>
+                            <Navigator url='/pages/Login/Login' openType='navigate' className='navigator'
+                              hoverClass='nav-hover'
+                            >
+                                <Text className='nav-txt'>门店管理</Text>
+                                <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
+                            </Navigator>
                         </View>
+                    </Skeleton>
 
-                        <View className='at-row at-row__justify--center'>
-                            <View className='nav-item at-col at-col-12 nav-examine'>
-                                <Navigator url='/pages/Login/Login' openType='navigate' className='navigator' hoverClass={'nav-hover'}>
-                                    <Text className='nav-txt'>审核中心</Text>
-                                    <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
-                                </Navigator>
-                            </View>
+                    <Skeleton
+                      row={1}
+                      rowHeight={160}
+                      loading={loading}
+                      animate
+                      skeleton-custom-class='skeleton-style'
+                    >
+                        <View className='nav-item nav-manage'>
+                            <Navigator url='/pages/Login/Login' openType='navigate' className='navigator'
+                              hoverClass='nav-hover'
+                            >
+                                <Text className='nav-txt'>门店管理</Text>
+                                <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
+                            </Navigator>
                         </View>
+                    </Skeleton>
 
-                        <View className='at-row at-row__justify--center'>
-                            <View className='nav-item at-col at-col-12 nav-sign'>
-                                <Navigator url='/pages/Login/Login' openType='navigate' className='navigator' hoverClass={'nav-hover'}>
-                                    <Text className='nav-txt'>在线签约</Text>
-                                    <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
-                                </Navigator>
-                            </View>
+                    <Skeleton
+                      row={1}
+                      rowHeight={160}
+                      loading={loading}
+                      animate
+                      skeleton-custom-class='skeleton-style'
+                    >
+                        <View className='nav-item nav-manage'>
+                            <Navigator url='/pages/Login/Login' openType='navigate' className='navigator'
+                              hoverClass='nav-hover'
+                            >
+                                <Text className='nav-txt'>门店管理</Text>
+                                <Image src='https://www.forguo.com/blog/imgs/logo.png' className='abs nav-icon' />
+                            </Navigator>
                         </View>
-                    </View>
+                    </Skeleton>
                 </View>
             </View>
         )

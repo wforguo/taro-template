@@ -5,18 +5,25 @@
 	"appid": "wxb1cff7e2de8753e5",
 	"setting": {
 		"urlCheck": false,
+		"scopeDataCheck": false,
+		"coverView": true,
 		"es6": false,
 		"postcss": false,
+		"compileHotReLoad": false,
 		"preloadBackgroundData": false,
 		"minified": false,
-		"newFeature": true,
-		"coverView": true,
 		"autoAudits": false,
+		"newFeature": true,
+		"uglifyFileName": false,
+		"uploadWithSourceMap": true,
+		"useIsolateContext": true,
+		"nodeModules": false,
+		"enhance": false,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
 		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": false,
-		"uploadWithSourceMap": true,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
@@ -51,8 +58,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/Work/Work",
-					"pathName": "pages/Work/Work",
+					"name": "pages/Mine/Mine",
+					"pathName": "pages/Mine/Mine",
 					"query": "",
 					"scene": null
 				}

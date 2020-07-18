@@ -1,9 +1,9 @@
 import Taro, {Component} from '@tarojs/taro'
-import { View, Image, Text, CheckboxGroup, Checkbox } from '@tarojs/components'
-import { AtButton, AtForm, AtInput, AtIcon} from 'taro-ui'
+import {Checkbox, CheckboxGroup, Text, View} from '@tarojs/components'
+import {AtButton, AtIcon, AtInput} from 'taro-ui'
 import {connect} from '@tarojs/redux'
 import HeaderLogo from '../../components/HeaderLogo'
-import {add, minus, asyncAdd} from '../../store/actions/counter'
+import {add, asyncAdd, minus} from '../../store/actions/counter'
 import './Login.scss'
 
 @connect(({counter}) => ({
@@ -20,6 +20,10 @@ import './Login.scss'
     }
 }))
 class Login extends Component {
+    config = {
+        navigationBarTitleText: ''
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -30,16 +34,14 @@ class Login extends Component {
             loginLoading: false
         }
     }
-    config = {
-        navigationBarTitleText: ''
-    }
 
-    handleChange (stateName, value) {
+    handleChange(stateName, value) {
         this.setState({
             [stateName]: value
         })
     }
-    resetPwd () {
+
+    resetPwd() {
         Taro.showToast({
             title: '忘记密码',
             icon: 'none'
@@ -47,14 +49,14 @@ class Login extends Component {
     };
 
     handlePwdShow = () => {
-        const { isPwd } = this.state;
+        const {isPwd} = this.state;
         this.setState({
             isPwd: !isPwd
         })
     };
 
     handleSubmit = () => {
-        const { loginLoading } = this.state;
+        const {loginLoading} = this.state;
         if (loginLoading) {
             return false;
         }
@@ -81,7 +83,7 @@ class Login extends Component {
     };
 
     checkboxChange = () => {
-        const { agreed } = this.state;
+        const {agreed} = this.state;
         this.setState({
             agreed: !agreed
         })
@@ -95,7 +97,7 @@ class Login extends Component {
     };
 
     render() {
-        const { mobile, password, isPwd, agreed, loginLoading } = this.state;
+        const {mobile, password, isPwd, agreed, loginLoading} = this.state;
         return (
             <View className='page login-page'>
                 <View className='login-inner block-center'>
@@ -105,15 +107,22 @@ class Login extends Component {
                             <View className='at-col at-col-1'>
                                 <AtIcon value='iphone' size='21' color='#C5C5C5'></AtIcon>
                             </View>
-                            <AtInput required border={false} name='mobile' title='' type='text' placeholder='请输入登录手机号码' value={mobile} onChange={this.handleChange.bind(this, 'value1')} />
+                            <AtInput required border={false} name='mobile' title='' type='text' placeholder='请输入登录手机号码'
+                              value={mobile} onChange={this.handleChange.bind(this, 'value1')}
+                            />
                         </View>
 
                         <View className='at-row at-row__align--center filed-input'>
                             <View className='at-col at-col-1'>
                                 <AtIcon value='lock' size='21' color='#C5C5C5'></AtIcon>
                             </View>
-                            <AtIcon className='abs show-pwd' value='eye' size='21' color={isPwd ? '#C5C5C5' : '#666'} onClick={this.handlePwdShow}></AtIcon>
-                            <AtInput required border={false} name='password' title='' type={isPwd ? 'password' : 'text'} placeholder='请输入密码' value={password} onChange={this.handleChange.bind(this, 'value2')} />
+                            <AtIcon className='abs show-pwd' value='eye' size='21' color={isPwd ? '#C5C5C5' : '#666'}
+                              onClick={this.handlePwdShow}
+                            ></AtIcon>
+                            <AtInput required border={false} name='password' title='' type={isPwd ? 'password' : 'text'}
+                              placeholder='请输入密码' value={password}
+                              onChange={this.handleChange.bind(this, 'value2')}
+                            />
                         </View>
 
                         <View className='at-row at-row__justify--end'>
@@ -121,7 +130,9 @@ class Login extends Component {
                         </View>
                         <View className='component-item__btn-group'>
                             <View className='component-item__btn-group__btn-item'>
-                                <AtButton disabled={!agreed || loginLoading} type='primary' formType='submit' onClick={this.handleSubmit.bind(this)}>登录</AtButton>
+                                <AtButton disabled={!agreed || loginLoading} type='primary' formType='submit'
+                                  onClick={this.handleSubmit.bind(this)}
+                                >登录</AtButton>
                             </View>
                         </View>
                     </View>

@@ -10,6 +10,7 @@
         align-items: center;
         padding-bottom: 40px;
         border-bottom: 1PX solid #EDEDED;
+
         .user-avatar {
             width: 72px * 2;
             height: 72px * 2;
@@ -21,6 +22,7 @@
             flex-direction: column;
             box-shadow: 5px 10px 15px rgba(89, 111, 142, 0.5);
         }
+
         .user-name {
             font-size: 48px;
             color: #333333;
@@ -29,6 +31,7 @@
             margin: 28px auto 10px;
             font-weight: bold;
         }
+
         .mobile, .duty {
             font-size: 28px;
             color: #666666;
@@ -49,20 +52,23 @@
         text-align: left;
         border-bottom: 1PX solid #F2F2F2;
         position: relative;
+
         &:after {
             content: '';
             position: absolute;
             top: 50%;
-            right: 40rpx;
-            width: 20rpx;
-            height: 20rpx;
+            right: 40 rpx;
+            width: 20 rpx;
+            height: 20 rpx;
             border-top: 2PX solid #CDCDCD;
             border-right: 2PX solid #CDCDCD;
             transform: translate(0, -50%) rotate(45deg);
         }
+
         .tool-txt {
             margin-left: 42px;
         }
+
         &.btn-hover {
             opacity: 0.75;
         }

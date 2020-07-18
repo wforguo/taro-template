@@ -14,15 +14,15 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
-const store = configStore()
+const store = configStore();
 
 class App extends Component {
 
     config = {
         pages: [
-            'pages/Login/Login',
-            'pages/Mine/Mine',
             'pages/Work/Work',
+            'pages/Mine/Mine',
+            'pages/Login/Login',
         ],
         window: {
             backgroundTextStyle: 'light',
@@ -42,9 +42,9 @@ class App extends Component {
                 }
             ]
         },
-    }
+    };
 
-    componentWillMount () {
+    componentWillMount() {
 
     }
 
@@ -65,10 +65,10 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Index />
+                <Index/>
             </Provider>
         )
     }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App/>, document.getElementById('app'));
